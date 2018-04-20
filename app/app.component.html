@@ -1,0 +1,30 @@
+<!-- Vista de los valores arrojados por el API -->
+<div class="container">
+  <h1>Informacion de usuarios</h1>
+  
+  <!-- Al precionar el boton activa el APi -->
+  <button (click)="getPosts()">Obtener informacion</button>
+  
+  <div>
+
+    <div class="row">
+
+      <div class="col-sm-6" *ngFor="let post of posts | async">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">{{post.name}}</h3>
+            <div class="card-text">
+              <ul>
+                <li>{{post.email}}</li>
+                <li>{{post.phone}}</li>
+                <li>{{post.website}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  
+  </div>
+</div>
