@@ -1,30 +1,65 @@
 <!-- Vista de los valores arrojados por el API -->
-<div class="container">
-  <h1>Informacion de usuarios</h1>
-  
-  <!-- Al precionar el boton activa el APi -->
-  <button (click)="getPosts()">Obtener informacion</button>
-  
-  <div>
+<div class="jumbotron">
+  <h1 class="display-4">Informacion de usuarios</h1>
+  <p class="lead">Haz click para activar el servicio y obtener información.</p>
+  <p class="lead">
+    <!-- Al precionar el boton activa el APi -->
+    <button class="btn btn-primary btn-lg" (click)="getPosts()">Activar API</button>
+  </p>
+</div>
 
-    <div class="row">
-
-      <div class="col-sm-6" *ngFor="let post of posts | async">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">{{post.name}}</h3>
-            <div class="card-text">
-              <ul>
-                <li>{{post.email}}</li>
-                <li>{{post.phone}}</li>
-                <li>{{post.website}}</li>
-              </ul>
+<div class="container">  
+  <div class="row">
+    <div class="col-md-6" *ngFor="let post of posts | async">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">{{post.id}}. {{post.name}}</h3>
+          <div class="card-text">
+            <div class="row">
+              <div class="col-sm-6">
+                <h6 class="label">Username</h6>
+                <p>{{post.username}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">Email</h6>
+                <p>{{post.email}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">street</h6>
+                <p>{{post.address.street}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">city</h6>
+                <p>{{post.address.city}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">zipcode</h6>
+                <p>{{post.address.zipcode}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">phone</h6>
+                <p>{{post.phone}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">website</h6>
+                <p>{{post.website}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">Company Name</h6>
+                <p>{{post.company.name}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">Company Catch Phrase</h6>
+                <p>{{post.company.catchPhrase}}</p>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="label">Company Bs</h6>
+                <p>{{post.company.bs}}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    
     </div>
-  
   </div>
 </div>
