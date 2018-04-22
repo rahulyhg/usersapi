@@ -22,7 +22,6 @@ export class AppComponent  {
   readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
 
   posts: Observable<any>;
-  newPost: Observable<any>;
 
   constructor(private http: HttpClient) {}
 
